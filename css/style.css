@@ -1,0 +1,926 @@
+h4{
+    color:#fff;
+    text-transform: uppercase;
+
+}
+
+h5{
+    color:#1665c4;
+}
+
+button{
+    background-color:#1665c4;
+}
+
+button:disabled{
+    opacity:0.25;
+}
+
+.loginButton{
+    position:absolute;
+    top:15px;
+    left:15px;
+    z-index:1;
+}
+
+.typeToggle{
+    width:100%;
+    border:none;
+    background-color:#1665c4;
+    opacity:0.5;
+    padding:15px 0;
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
+}
+
+.typeToggle:hover{
+    background-color:#1490c6;
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease;
+    opacity:1;
+}
+
+.activeButton{
+    opacity:1;
+}
+
+label{
+    color:#1665c4;
+}
+
+a:link, a:visited, a:active{
+    color:#1665c4;
+}
+
+blockquote p{
+    color:#1665c4;
+}
+
+.navbar-toggle-flash{
+    background-color:#1665c4;
+}
+
+/*****/
+body{
+    background-color:#141211;
+    background-image:none;
+    color:#aaa;
+}
+
+h2{
+    text-transform:uppercase;
+    font-family: 'Amaranth', sans-serif;
+    font-style:italic;
+    font-size:22pt;
+    margin:0;
+    color:#fff;
+}
+
+button{
+    text-transform: uppercase;
+    font-family: 'Amaranth', sans-serif;
+    border: 4px solid #fff;
+    border-radius:0;
+    background-color:rgba(0,0,0,0);
+    min-width:100px;
+    color:#fff;
+}
+
+p{
+    margin:15px 0 0 0;
+}
+
+#container{
+    -webkit-transition: -webkit-transform 0.4s ease;
+    -moz-transition: -moz-transform 0.4s ease;
+    transition: transform 0.4s ease;
+    background-image:url("../img/rough-pattern.jpg");
+}
+
+.slideLeft{
+    -webkit-transform: translate(-300px, 0);
+    -webkit-transition: transform 0.4s ease;
+    -moz-transform: translate(-300px, 0);
+    -moz-transition: -moz-transform 0.4s ease;
+    -ms-transform: translate(-300px, 0);
+    -ms-transition: -ms-transform 0.4s ease;
+    transform: translate(-300px, 0);
+    transition: transform 0.4s ease;
+}
+
+.semiOpaque{
+    opacity:0.3;
+}
+
+#wrap{
+    background-color:rgba(0,0,0,0);
+    box-shadow:0 -20px 20px -13px #1665c4;
+    margin:0 8px;
+    padding-bottom:80px;
+}
+
+#main{
+    margin-left:auto;
+    margin-right:auto;
+    overflow:hidden;
+}
+
+.mainImg{
+    width:469px;
+    max-width:95%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.positive{
+    color:#17c178;
+}
+
+.positiveBackground{
+    background-color:#17c178;
+}
+
+.negative{
+    color:#ee0f53;
+}
+
+.negativeBackground{
+    background-color:#ee0f53;
+}
+
+.username{
+    font-family: "Amaranth", sans-serif;
+    font-weight:bold;
+    text-transform:uppercase;
+    color:#fff;
+}
+
+#menuButton{
+    width:50px;
+    height:50px;
+    background-image:url("../img/icons/plus.png");
+    background-image:url("../img/icons/plus.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center center;
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:2;
+    cursor:pointer;
+
+    filter: grayscale(1) brightness(10);
+    -webkit-filter: grayscale(1) brightness(4);
+
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+#menuButton.expanded{
+    filter: none;
+    -webkit-filter: none;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+}
+
+#blinkingArrowContainer{
+    position:fixed;
+    top:3px;
+    right:23px;
+    z-index:2;
+}
+
+.blinkingArrow{
+    height:10px;
+    width:10px;
+    display:inline-block;
+    background-image:url("../img/icons/arrow.png");
+    background-image:url("../img/icons/arrow.svg");
+
+    -webkit-animation-name:flash;
+    -webkit-animation-duration:800ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name:flash;
+    -moz-animation-duration:800ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name:flash;
+    -ms-animation-duration:800ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name:flash;
+    animation-duration:800ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    animation-direction:alternate;
+    -webkit-animation-direction:alternate;
+
+    /* For some reason, safari won't cooperate with transform transition. */
+    -webkit-transition: all .5s, opacity .25s ease-in-out;
+    -moz-transition: transform .5s, opacity .25s ease-in-out;
+    transition: transform .5s, opacity .25s ease-in-out;
+}
+
+.blinkingArrow:first-child{
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -o-animation-delay: .2s;
+    animation-delay: .2s;
+}
+
+.blinkingArrow:nth-child(2){
+    -webkit-animation-delay: .1s;
+    -moz-animation-delay: .1s;
+    -o-animation-delay: .1s;
+    animation-delay: .1s;
+}
+
+.expanded .blinkingArrow{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#menu{
+    width:300px;
+    max-width:99%;
+    min-height:100%;
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:1;
+
+    background-color:#141211;
+    background-image:url("../img/logos/fotam-small.png"), url("../img/rough-pattern.jpg");
+    background-image:url("../img/logos/fotam.svg"), url("../img/rough-pattern.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: bottom center, top left;
+    background-size: 75% auto, auto;
+
+    margin-right:-300px;
+
+    padding:0 15px;
+
+    -webkit-transition: -webkit-transform 0.4s ease;
+    -moz-transition: -moz-transform 0.4s ease;
+    transition: transform 0.4s ease;
+    box-shadow: inset 10px 0 10px -5px #000;
+}
+
+#menuInnerWrap{
+    position:absolute;
+    overflow-y:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:0 15px;
+}
+
+#menuLeftBar{
+    width:4px;
+    height:100%;
+    background-color:rgba(28, 27, 25, 0.6);
+    border-right: 1px solid #000;
+    border-left: 1px solid #1d1d1d;
+    position:absolute;
+    left:0;
+}
+
+.menuLogo{
+    max-width:225px;
+}
+
+#menu ul{
+    list-style-type:none;
+    padding:0;
+}
+
+#menu ul li{
+    height:50px;
+    background-color:rgba(28, 27, 25, 0.6);
+    border: 1px solid #0e0e0e;
+    border-top:none;
+    border-bottom:none;
+    box-shadow: 0 1px 0 #090909,  0 -1px 0 #1d1d1d;
+    width:100%;
+    margin: 5px 0;
+    line-height:50px;
+    padding:0 20px;
+    border-left:4px solid #1665c4;
+    transition: opacity 0.5s;
+}
+
+#menu ul li:nth-of-type(4n+2){
+    border-left-color: #1665c4;
+}
+
+#menu ul li:nth-of-type(4n+3){
+    border-left-color: #16c4bb;
+}
+
+#menu ul li:nth-of-type(4n+4){
+    border-left-color: #17c178;
+}
+
+#menu ul li a{
+    display:inline-block;
+    width:100%;
+    height:100%;
+    color:#aaa;
+}
+
+#menu ul li:hover{
+    opacity:0.4;
+    transition: opacity 0.5s;
+}
+
+.mainImgWrap{
+    background-image:url("../img/app-graphics/light-checker.png");
+    background-color:#1665c4;
+    background-position:top left, center 65%;
+    background-size:auto, cover;
+    height:500px;
+    position:relative;
+}
+
+.app.row .grey-panel{
+    height:330px;
+}
+
+.app.row div:nth-of-type(1) .grey-panel{
+    margin-bottom:0;
+}
+
+.grey-panel ul, .darkUl{
+    list-style-type:none;
+    padding:0;
+}
+
+.grey-panel ul li, .darkUl li{
+    background-color:rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding:15px;
+    margin:5px 0;
+    border-radius: 3px;
+}
+
+.structuredHeight{
+    height:858px;
+}
+
+.card{
+    background-color:#eee;
+    border:1px solid #e5e5e5;
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #eee;
+    padding:5px;
+    /*margin:5px;*/
+    display:inline-block;
+    vertical-align: top;
+    height:250px;
+    text-align:center;
+}
+
+.card img{
+    border:1px solid #e5e5e5;
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #fff;
+    max-height:100%;
+    max-width:100%;
+    padding:3px;
+    background:#fff;
+}
+
+.app .card{
+    width:100%;
+}
+
+.text-card{
+    max-width:100%;
+    height:100%;
+    background-color:#fff;
+    border:1px solid #e5e5e5;
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #fff;
+    padding:20px;
+}
+
+.plain-card{
+    /*margin:5px;*/
+    display:inline-block;
+    vertical-align: top;
+    height:250px;
+}
+
+.text-banner{
+    background-image:url("../img/logos/gears-light.png");
+    background-position:center center;
+    background-repeat:no-repeat;
+    padding:10px;
+    margin: 0 3px;
+}
+
+.text-banner h2{
+    text-align:center;
+}
+
+.blue{
+    background-color:#1665c4 !important;
+}
+
+.fiber{
+    background-image:url("../img/rough-pattern-light-transparent.png") !important;
+}
+
+.vertical-center{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.blurry{
+    width:100%;
+    height:100%;
+    background-size:cover;
+    border-radius:2px;
+    background-position:center center;
+    padding:15px;
+    overflow:hidden;
+}
+
+.map{
+    background-image:url("../img/app-graphics/blurry-map.jpg");
+}
+
+.bgr{
+    background-image:url("../img/app-graphics/blurry-bgr.jpg");
+}
+
+.fbgr{
+    background-image:url("../img/app-graphics/blurry-fbgr.jpg");
+}
+
+.rewards{
+    background-image:url("../img/app-graphics/blurry-rewards.jpg");
+}
+
+.ypw{
+    background-image:url("../img/app-graphics/blurry-ypw.jpg");
+}
+
+.fotamads{
+    background-image:url("../img/app-graphics/blurry-fotamads.jpg");
+}
+
+
+.crosshairs{
+    background-image:url("../img/app-graphics/location-spin-crosshairs.png");
+    background-position:center center;
+    background-repeat:no-repeat;
+    height:100%;
+    width:100%;
+    min-height:150px;
+}
+
+.spinner{
+    -webkit-animation-name: spin, flash;
+    -webkit-animation-duration: 4000ms, 800ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin, flash;
+    -moz-animation-duration: 4000ms, 800ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin, flash;
+    -ms-animation-duration: 4000ms, 800ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: spin,flash;
+    animation-duration: 4000ms, 800ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    animation-direction:normal, alternate;
+    -webkit-animation-direction:normal, alternate;
+
+    transition: opacity .25s ease-in-out;
+}
+
+.makeItRain{
+    background-image:url("../img/app-graphics/sss.png");
+    background-image:url("../img/app-graphics/sss.svg");
+    width:40px;
+    height:40px;
+    background-size:contain;
+    background-position:center center;
+
+    -webkit-animation-name: drop;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(.17,.01,.99,.91);
+    -moz-animation-name: drop;
+    -moz-animation-duration: 1500ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: cubic-bezier(.17,.01,.99,.91);
+    -ms-animation-name: drop;
+    -ms-animation-duration: 1500ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: cubic-bezier(.17,.01,.99,.91);
+    animation-name: drop;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.17,.01,.99,.91);
+
+    animation-direction:normal;
+    -webkit-animation-direction:normal, alternate;
+
+}
+
+.makeItRain:nth-of-type(2){
+    margin-left:10%;
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -o-animation-delay: .2s;
+    animation-delay: .2s;
+
+    -webkit-animation-duration: 1720ms;
+    -moz-animation-duration: 1720ms;
+    -ms-animation-duration: 1720ms;
+    animation-duration: 1720ms;
+}
+
+.makeItRain:nth-of-type(3){
+    margin-left:50%;
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    -o-animation-delay: .4s;
+    animation-delay: .4s;
+    -webkit-animation-duration: 1625ms;
+    -moz-animation-duration: 1625ms;
+    -ms-animation-duration: 1625ms;
+    animation-duration: 1625ms;
+}
+
+.makeItRain:nth-of-type(4){
+    margin-left:60%;
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -o-animation-delay: .2s;
+    animation-delay: .2s;
+    -webkit-animation-duration: 1525ms;
+    -moz-animation-duration: 1525ms;
+    -ms-animation-duration: 1525ms;
+    animation-duration: 1525ms;
+}
+
+.makeItRain:nth-of-type(5){
+    margin-left:85%;
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -o-animation-delay: .2s;
+    animation-delay: .2s;
+    -webkit-animation-duration: 1325ms;
+    -moz-animation-duration: 1325ms;
+    -ms-animation-duration: 1325ms;
+    animation-duration: 1325ms;
+}
+
+.makeItRain:nth-of-type(6){
+    margin-left:33%;
+    -webkit-animation-delay: .3s;
+    -moz-animation-delay: .3s;
+    -o-animation-delay: .3s;
+    animation-delay: .3s;
+    -webkit-animation-duration: 1590ms;
+    -moz-animation-duration: 1590ms;
+    -ms-animation-duration: 1590ms;
+    animation-duration: 1590ms;
+}
+
+.makeItRain:nth-of-type(7){
+    margin-left:72%;
+    -webkit-animation-delay: .7s;
+    -moz-animation-delay: .7s;
+    -o-animation-delay: .7s;
+    animation-delay: .7s;
+    -webkit-animation-duration: 1400ms;
+    -moz-animation-duration: 1400ms;
+    -ms-animation-duration: 1400ms;
+    animation-duration: 1400ms;
+}
+
+#bgr-free-header-wrapper{
+    background-color:#fff9e9;
+    background-image:url("../img/app-graphics/light-checker.png");
+    width:100%;
+    text-align:center;
+}
+
+#bgr-free-desc-wrapper{
+    background-color:#efefef;
+    border-top:1px solid #ccc;
+    height:250px;
+    width:100%;
+}
+
+.bgr-cta-inner{
+    width:960px;
+    height:100%;
+    font-size:0;
+    font-family: 'Open Sans', sans-serif;
+    color:#1665c4;
+}
+
+.third{
+    letter-spacing:5px;
+    text-transform:uppercase;
+    width:32%;
+    margin-right:2%;
+    display:inline-block;
+    font-size:14pt;
+    height:100%;
+    vertical-align: top;
+    padding:35px 0;
+}
+.third:last-of-type{
+    margin-right:0;
+}
+
+.bgr-buttons{
+    background: url("../img/logos/opaque-logo.png") no-repeat center 35px;
+    background-size: auto 120px;
+    padding-top:170px;
+    text-align:center;
+}
+
+.bgr-buttons button{
+    padding:10px;
+    border-radius:4px;
+    background-color:#1665c4;
+    box-shadow: 0 2px 0 #05635f;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    font-size:12pt;
+}
+
+ul.checklist{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+
+ul.checklist>li{
+    background: url("../img/icons/checkmark.png") no-repeat left 6px;
+    padding-left:25px;
+    margin: 15px 0;
+}
+
+.socialIcons{
+    font-size: 0;
+    position: absolute;
+    bottom:0;
+    right:0;
+}
+
+.socialIcons img{
+    display:inline-block;
+    height:50px;
+    width:50px;
+    margin-left:1px;
+    filter:grayscale(1) brightness(20%);
+    -webkit-filter:grayscale(1) brightness(20%);
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.socialIcons img:hover{
+    filter: drop-shadow(-2px 2px 2px #000) brightness(100%);
+    -webkit-filter: drop-shadow(-2px 2px 2px #000) brightness(100%);
+
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.shareOptions{
+    display:none;
+    vertical-align:top;
+    overflow:hidden;
+}
+
+.facebookShare{
+    color:#3b5998;
+    border-color:#3b5998;
+}
+
+.twitterShare{
+    color:#55acee;
+    border-color:#55acee;
+}
+
+#centerAd{
+    /* Have to hide via z-index because Google Ads won't render on zero width */
+    z-index:-1;
+    /* Also have to hide via opacity because otherwise sliding the menu reveals this thing. */
+    opacity:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.95);
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#centerAdCloseButton{
+    display:none;
+}
+
+@media(max-width:700px){
+    .mainImg{
+        max-height:70%;
+        top:55%;
+    }
+    .mainImgWrap{
+        height:300px;
+    }
+}
+
+@media(max-width:768px){
+    .app.row .grey-panel{
+        height:auto;
+    }
+    .app.row .grey-panel .vertical-center{
+        top: auto;
+        transform:none;
+        -webkit-transform:none;
+        -ms-transform:none;
+    }
+
+    .app.row div:nth-of-type(1) .grey-panel img{
+        max-height:150px;
+    }
+    .blurry{
+        max-height:180px;
+    }
+
+    .grey-panel{
+        padding:20px;
+    }
+    .structuredHeight{
+        height:auto;
+    }
+}
+
+@keyframes flash{
+    from{ opacity:1; }
+    to{ opacity:0.1; }
+}
+@-ms-keyframes flash{
+    from{ opacity:1; }
+    to{ opacity:0.1; }
+}
+@-moz-keyframes flash{
+    from{ opacity:1; }
+    to{ opacity:0.1; }
+}
+@-webkit-keyframes flash{
+    from{ opacity:1; }
+    to{ opacity:0.1; }
+}
+
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@-ms-keyframes drop {
+    from { -ms-transform: translate(0, -300px); }
+    to { -ms-transform: translate(0, 250px); }
+}
+@-moz-keyframes drop {
+    from { -moz-transform: translate(0, -300px); }
+    to { -moz-transform: translate(0, 250px); }
+}
+@-webkit-keyframes drop {
+    from { -webkit-transform: translate(0, -300px); }
+    to { -webkit-transform: translate(0, 250px); }
+}
+@keyframes drop {
+    from {
+        transform:translate(0, -300px);
+    }
+    to {
+        transform:translate(0, 250px);
+    }
+}
+
+/***** BGR BOX STYLING *****/
+#dropBox{
+    position:fixed;
+    pointer-events:none;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:100000;
+    background-color:#000;
+    opacity:0;
+}
+
+#uploadPhoto{
+    width:100%;
+    height:350px;
+}
+
+.pseudoButton, .hiddenButton{
+    background-color:#141211 !important;
+    background-image:url("../img/app-graphics/light-checker.png");
+    border:none !important;
+    box-shadow:0 1px 1px #202020, inset 0 2px 3px -1px #0c0c0c;
+    border-top:1px solid #444;
+    border-radius: 3px;
+    width:100% !important;
+    height:100% !important;
+    cursor:pointer;
+    font-size:0;
+}
+
+.pseudoButton{
+    background-image:url("../flashfoto/img/photo.png"), url("../img/app-graphics/light-checker.png") !important;
+    background-repeat: no-repeat, repeat !important;
+}
+
+#imgPreviewWrapper{
+    width:100% !important;
+    height:100% !important;
+}
+
+/* Warrantizor Ad */
+#dynamicAd{
+    display:inline-block;
+    font-size:0;
+    position:relative;
+    height:250px;
+    width:300px;
+}
+
+#dynamicAd img{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+
+#dynamicUnderlay{
+    position:absolute;
+    width:112px;
+    height:196px;
+    z-index:0;
+    top:27px;
+    left:8px;
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color:#000;
+}
