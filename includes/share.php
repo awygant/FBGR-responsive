@@ -10,17 +10,18 @@
      function shareToFacebook(ffid, version){
          ffid = ffid || "";
          version = version || "";
-         var shareURL = base_url + "/view.php";
-         if(ffid.length > 0)
+         var shareURL = base_url + "index.php";
+         if(ffid > 0)
             shareURL += "?ffid=" + ffid + "&version=" + version;
+         console.log("share url: ", shareURL);
          window.location.href = login_base_url + "/shares/share?network=Facebook&url=" + shareURL;
 
      }
      function shareToTwitter(ffid, version){
          ffid = ffid || "";
          version = version || "";
-         var shareURL = base_url + "/view.php";
-         if(ffid.length > 0)
+         var shareURL = base_url + "index.php";
+         if(ffid > 0)
              shareURL += "?ffid=" + ffid + "&version=" + version;
          window.location.href = login_base_url + "/shares/share?network=Twitter&url=" + shareURL;
      }
