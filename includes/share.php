@@ -1,30 +1,27 @@
-<button onclick = "share()">Share</button>
-<div class = "shareOptions">
-    <button class = "facebookShare" onclick = "shareToFacebook()">Facebook</button>
-    <button class = "twitterShare" onclick = "shareToTwitter()">Twitter</button>
-</div>
 <!--p class = "text-center"><span class = "shareCount">0</span> Shares.</p> <span class = "fbLikeCount">0</span> Likes. <span class = "viewCount">0</span> Views.<!-- TODO: Grab reporting data -->
 
 <script type = "text/javascript">
      var login_base_url = "<?php echo $GLOBALS['login_base_url'];?>";
      var base_url = "<?php echo $base_url;?>";
 
-     function share(){
-         $(".shareOptions").toggle();
+     function share(elem){
+         $(elem).next(".shareOptions").toggle();
      }
-     function shareToFacebook(ffid){
+     function shareToFacebook(ffid, version){
          ffid = ffid || "";
+         version = version || "";
          var shareURL = base_url + "/view.php";
          if(ffid.length > 0)
-            shareURL += "?ffid=" + ffid;
+            shareURL += "?ffid=" + ffid + "&version=" + version;
          window.location.href = login_base_url + "/shares/share?network=Facebook&url=" + shareURL;
 
      }
-     function shareToTwitter(ffid){
+     function shareToTwitter(ffid, version){
          ffid = ffid || "";
+         version = version || "";
          var shareURL = base_url + "/view.php";
          if(ffid.length > 0)
-             shareURL += "?ffid=" + ffid;
+             shareURL += "?ffid=" + ffid + "&version=" + version;
          window.location.href = login_base_url + "/shares/share?network=Twitter&url=" + shareURL;
      }
 

@@ -121,6 +121,7 @@ p{
     box-shadow:0 -20px 20px -13px #1665c4;
     margin:0 8px;
     padding-bottom:80px;
+    position:relative;
 }
 
 #main{
@@ -734,12 +735,12 @@ ul.checklist>li{
 }
 
 .facebookShare{
-    color:#3b5998;
+    background-color:#3b5998;
     border-color:#3b5998;
 }
 
 .twitterShare{
-    color:#55acee;
+    background-color:#55acee;
     border-color:#55acee;
 }
 
@@ -923,4 +924,74 @@ ul.checklist>li{
     background-position:center center;
     background-repeat:no-repeat;
     background-color:#000;
+}
+
+#backgroundRemovalResult{
+    text-align:left;
+    display:none;
+}
+
+#backgroundRemovalResult .result{
+    box-shadow: 0 0 6px #000;
+    max-width:300px;
+    display:inline-block;
+    vertical-align:top;
+    margin:0 5px 5px 0;
+    text-align:center;
+}
+
+#backgroundRemovalResult img{
+    max-height:300px;
+}
+
+.actions{
+    padding:5px 5px 0 5px;
+}
+
+.action{
+    display:inline-block;
+    width:45px;
+    height:45px;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size: 35px auto;
+    cursor:pointer;
+}
+
+.action:hover{
+    filter: drop-shadow(2px 2px 1px #000);
+    -webkit-filter: drop-shadow(2px 2px 1px #000);
+
+}
+
+.view{
+    float:left;
+    background-image:url('../img/icons/view.png');
+    background-image:url('../img/icons/view.svg');
+}
+
+.download{
+    background-image:url('../img/icons/save.png');
+    background-image:url('../img/icons/save.svg');
+}
+
+.share{
+    float:right;
+    background-image:url('../img/icons/share.png');
+    background-image:url('../img/icons/share.svg');
+}
+
+#fullView{
+    position:absolute;
+    left:0;
+    width:100%;
+    min-height:100%;
+    z-index:2;
+    background-color:rgba(0,0,0,0.95);
+    text-align:center;
+    display:none;
+}
+
+#fullViewActionBox .share{
+    float:none;
 }

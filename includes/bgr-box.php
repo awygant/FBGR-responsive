@@ -4,10 +4,10 @@
         <?php include_once("flashfoto/uploader/upload.php"); ?>
         <?php include_once("includes/centerAd.php"); ?>
     </div>
-    <div id = "backgroundRemovalResult"></div>
+    <div id = "backgroundRemovalResult">
+        <h4>Your Results:</h4>
+    </div>
     <p></p>
-    <button onclick = "resetForm(); hideResult()">Start Over</button>
-    <button onclick = "download();" class = "downloadButton" disabled>Download</button>
     <?php include "includes/share.php";?>
     <p></p>
 
@@ -23,8 +23,6 @@
 <script type = "text/javascript">
     type = "";
     api_base_url = "<?php echo $api_base_url; ?>";
-    currentFfid = "";
-    currentImgUrl = "";
     setUploadCallback(function(ffid){
         changeStatus("Removing Background");
         backgroundremoval(ffid, showResult, type);
@@ -45,13 +43,15 @@
         }
         if(ffid > 0){
             var maskedImageURL = api_base_url + "get/" + ffid + "?version=" + version;
-            currentImgUrl = maskedImageURL;
-            currentFfid = ffid;
             $(".downloadButton").removeAttr("disabled");
             var img = new Image();
             img.onload = function(){
-                $("#uploadPhoto").hide();
-                $("#backgroundRemovalResult").append(this).show();
+                resetForm();
+                $("#backgroundRemovalResult").append(buildResult(this, ffid, version)).show();
+                if(!($("#centerAd").is(":visible"))){
+                    jump("backgroundRemovalResult");
+                }
+                $("#resultScroll").click();
             };
             img.src = maskedImageURL;
         }
@@ -60,10 +60,40 @@
         }
     }
 
-    function download(){
-        if(currentFfid.length < 1 || currentFfid.length < 1)
-            return;
-        window.location.href = "download.php?filename=" + currentFfid + ".png&url=" + currentImgUrl;
+    function buildResult(img, ffid, version){
+        var resultDiv = $("<div>");
+        resultDiv.addClass("result");
+        resultDiv.append(img);
+        resultDiv.append("<div class = 'actions'>" +
+        "<div class = 'action view' onclick = 'view(" + ffid + ", \"" + version + "\")'></div>" +
+        "<div class = 'action download' onclick = 'download(this);' data-ffid = '" + ffid + "' data-version = '" + version + "'></div>" +
+        "<div class = 'action share' onclick = 'share(this)'></div>" +
+        "<div class = 'shareOptions'>" +
+        "<button class = 'facebookShare' onclick = 'shareToFacebook(" + ffid + ", \"" + version + "\")'>Facebook</button>" +
+        "<button class = 'twitterShare' onclick = 'shareToTwitter(" + ffid + ", \"" + version + "\")'>Twitter</button>" +
+        "</div>" +
+        "</div>");
+        return resultDiv;
+    }
+
+    function download(elem){
+        var ffid = $(elem).data('ffid');
+        var version = $(elem).data('version');
+        var ffurl = api_base_url + "get/" + ffid + "?version=" + version;
+        window.location.href = "download.php?filename=" + ffid + ".png&url=" + ffurl;
+    }
+
+    function view(ffid, version){
+        var ffurl = api_base_url + "get/" + ffid + "?version=" + version;
+        $("#fullViewImg").attr("src", ffurl);
+        $("#fullViewActionBox").html("<div class = 'action download' onclick = 'download(this);' data-ffid = '" + ffid + "' data-version = '" + version + "'></div>" +
+        "<div class = 'action share' onclick = 'share(this)'></div>" +
+        "<div class = 'shareOptions'>" +
+        "<button class = 'facebookShare' onclick = 'shareToFacebook(" + ffid + ", \"" + version + "\")'>Facebook</button>" +
+        "<button class = 'twitterShare' onclick = 'shareToTwitter(" + ffid + ", \"" + version + "\")'>Twitter</button>" +
+        "</div>");
+        $("#fullView").show();
+        jump('fullView');
     }
 
     $("#fileInput").change(function(){
@@ -126,6 +156,9 @@
         $("#centerAdMessage").show();
         $("#centerAdWorking").show();
         $("#centerAdCloseButton").hide();
+        if((($("#backgroundRemovalResult").is(":visible")))){
+            jump('backgroundRemovalResult');
+        }
     }
 
     function jump(element){
@@ -147,5 +180,15 @@
             backgroundremoval(ffid, showResult, type);
         });
     }
+
+    <?php
+
+     if(isset($_GET["ffid"]) && isset($_GET["version"])){
+        $ffid = $_GET["ffid"];
+        $version = $_GET["version"];
+        echo "view(" . $ffid . ", '" . $version . "');";
+     }
+
+     ?>
 
 </script>

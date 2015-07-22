@@ -12,7 +12,6 @@ include_once "includes/session.php";
     <?php include_once("includes/resources.php"); ?>
 
     <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-
 </head>
 <body>
 
@@ -24,7 +23,14 @@ include_once "includes/session.php";
     </div>
 
     <div id = "wrap" class = "text-center">
+        <div id = "fullView">
+            <button class = "negativeBackground" onclick = "$(this).parent().hide();">Close [x]</button>
+            <div id = "fullViewActionBox"></div>
+            <div>
+                <img id = "fullViewImg" src = ""/>
+            </div>
 
+        </div>
         <div id = "main">
             <h5>Drag and drop anywhere on this page to begin. Or, use the form below.</h5>
 
@@ -32,7 +38,7 @@ include_once "includes/session.php";
                 <div class = "col-lg-3 col-md-4 col-sm-6">
                     <div class = "grey-panel structuredHeight">
                         <h4>Choose your mode:</h4>
-                        <button class = "typeToggle activeButton" onclick = "setType('product', this);">Product</button>
+                        <button class = "typeToggle activeButton" onclick = "xType('product', this);">Product</button>
                         <button class = "typeToggle" onclick = "setType('body', this);">Body</button>
                         <button class = "typeToggle" onclick = "setType('facehair', this);">Face & Hair</button>
                     </div>
@@ -50,7 +56,7 @@ include_once "includes/session.php";
                         <ul class = "darkUl positive">
                             <li>Your object in the center of the shot.</li>
                             <li>A smooth or simple background.</li>
-                            <li>A background that contrasts with the product.</li>
+                            <li>A background that contrasts with the foreground.</li>
                         </ul>
                         <h5>DON'T use pictures with:</h5>
                         <ul class = "darkUl negative">
