@@ -3,8 +3,8 @@ $partner_username = "anna";
 $partner_apikey = "N68NiThCGapPK0YCceYloq5Ua2jUdzQS";
 $api_base_url = "http://www.flashfotoapi.com/api/";
 
-//define('ROOT_DIRECTORY', '/');
-define('ROOT_DIRECTORY', '/~Anna/2015FBGR/');
+define('ROOT_DIRECTORY', '/');
+//define('ROOT_DIRECTORY', '/~Anna/2015FBGR/');
 global $server_name, $auth_callback_url; // used in fotam-test.php and for navigation logout button
 $server_name = 'http://'.$_SERVER['HTTP_HOST'].ROOT_DIRECTORY;
 $base_url = $server_name; //need to consolidate this

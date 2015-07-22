@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Fotam | Contact</title>
+    <title>Free Background Removal | Contact</title>
 
     <?php include_once("includes/meta.php");?>
 
