@@ -12,9 +12,9 @@
          version = version || "";
          var shareURL = base_url + "index.php";
          if(ffid > 0)
-            shareURL += "?ffid=" + ffid + "&version=" + version;
-         console.log("share url: ", shareURL);
-         window.location.href = login_base_url + "/shares/share?network=Facebook&url=" + shareURL;
+            shareURL += "?ffid=" + ffid + '_' + version;
+         //window.location.href = login_base_url + "/shares/share?network=Facebook&url=" + shareURL;
+         console.log(login_base_url + "/shares/share?network=Facebook&url=" + shareURL);
 
      }
      function shareToTwitter(ffid, version){
@@ -22,7 +22,7 @@
          version = version || "";
          var shareURL = base_url + "index.php";
          if(ffid > 0)
-             shareURL += "?ffid=" + ffid + "&version=" + version;
+             shareURL += "?ffid=" + ffid + '_' + version;
          window.location.href = login_base_url + "/shares/share?network=Twitter&url=" + shareURL;
      }
 

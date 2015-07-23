@@ -183,9 +183,10 @@
 
     <?php
 
-     if(isset($_GET["ffid"]) && isset($_GET["version"])){
-        $ffid = $_GET["ffid"];
-        $version = $_GET["version"];
+     if(isset($_GET["ffid"])){
+        $data = explode("_", $_GET["ffid"]);
+        $ffid = $data[0];
+        $version = $data[1];
         echo "view(" . $ffid . ", '" . $version . "');";
      }
 
